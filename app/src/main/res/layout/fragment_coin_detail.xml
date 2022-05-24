@@ -1,14 +1,410 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CoinDetailFragment">
+    tools:context=".ui.fragments.CoinDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+  <FrameLayout
+      android:id="@+id/frameLayout"
+      android:layout_width="match_parent"
+      android:layout_height="250dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/crypto_img" />
+
+
+    <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/gradient" />
 
-</FrameLayout>
+  </FrameLayout>
+
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView"
+      android:layout_width="120dp"
+      android:layout_height="150dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginBottom="16dp"
+      android:clipToPadding="true"
+      app:cardCornerRadius="100dp"
+      app:layout_constraintBottom_toTopOf="@+id/guideline2"
+      app:layout_constraintStart_toStartOf="parent">
+
+
+    <ImageView
+        android:id="@+id/img_coin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bitcoin"/>
+
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_end="398dp" />
+
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-black"
+      android:gravity="center"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/cardView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/frameLayout"
+      tools:text="Coin Name" />
+
+
+  <TextView
+      android:id="@+id/txt_symbol"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawablePadding="8dp"
+      android:gravity="center"
+      android:textColor="@color/white"
+      android:textStyle="bold"
+      app:drawableStartCompat="@drawable/money"
+      app:drawableTint="@color/white"
+      app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/textView"
+      tools:text="BTC" />
+
+
+  <TextView
+      android:id="@+id/txt_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawablePadding="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginBottom="8dp"
+      android:gravity="center"
+      android:textColor="@color/white"
+      app:drawableStartCompat="@drawable/dolar"
+      app:drawableTint="@color/white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/txt_symbol"
+      android:textStyle="bold"
+      tools:text="U$D 29765" />
+
+
+  <TextView
+      android:id="@+id/txt_rank"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawablePadding="8dp"
+      android:layout_marginTop="8dp"
+      android:gravity="center"
+      android:textColor="@color/white"
+      app:drawableStartCompat="@drawable/star"
+      app:drawableTint="@color/white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/txt_price"
+      android:textStyle="bold"
+      tools:text="1 (Market Capital Ranking)" />
+
+
+  <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:gravity="center"
+      android:orientation="vertical"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/simbol_up" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="High 24h" />
+
+    <TextView
+        android:id="@+id/txt_high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="U$D 31348" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/linearLayout2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      android:gravity="center"
+      android:orientation="vertical"
+      app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+      app:layout_constraintStart_toEndOf="@+id/linearLayout"
+      app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/simbol_down" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Low 24h" />
+
+    <TextView
+        android:id="@+id/txt_low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="U$D 29293"
+        android:textStyle="bold"/>
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:id="@+id/linearLayout3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:gravity="center"
+      android:layout_marginEnd="16dp"
+      android:orientation="vertical"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/last_update" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Update" />
+
+    <TextView
+        android:id="@+id/txt_lastUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19:53"
+        android:textStyle="bold"/>
+
+  </LinearLayout>
+
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:fontFamily="sans-serif-black"
+      android:text="More Info"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+
+  <LinearLayout
+      android:id="@+id/info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:gravity="center"
+      android:orientation="horizontal"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/total_volumen" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        tools:text="Total Volume" />
+
+    <TextView
+        android:id="@+id/txt_vol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="U$D 329817211744"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/info2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      app:layout_constraintStart_toStartOf="@+id/info"
+      app:layout_constraintTop_toBottomOf="@+id/info">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/cambio" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        tools:text="Price Change 24h" />
+
+    <TextView
+        android:id="@+id/txt_priceChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="U$D -662.57"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:id="@+id/info3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      app:layout_constraintStart_toStartOf="@+id/info2"
+      app:layout_constraintTop_toBottomOf="@+id/info2">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/percentaje" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        tools:text="Price Change Percentage 24h" />
+
+    <TextView
+        android:id="@+id/txt_priceChangePercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-2.17754"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:id="@+id/info4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      app:layout_constraintStart_toStartOf="@+id/info3"
+      app:layout_constraintTop_toBottomOf="@+id/info3">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:src="@drawable/ic_baseline_currency_bitcoin_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        tools:text="Total Supply" />
+
+    <TextView
+        android:id="@+id/txt_totalSupply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-21000000"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:id="@+id/info5"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      app:layout_constraintStart_toStartOf="@+id/info4"
+      app:layout_constraintTop_toBottomOf="@+id/info4">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:src="@drawable/circular" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        tools:text="Circulating Supply" />
+
+    <TextView
+        android:id="@+id/txt_circulatingSupply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19041687"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

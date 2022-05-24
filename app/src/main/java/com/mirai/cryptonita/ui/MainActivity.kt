@@ -1,7 +1,8 @@
-package com.mirai.cryptonita
+package com.mirai.cryptonita.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mirai.cryptonita.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
