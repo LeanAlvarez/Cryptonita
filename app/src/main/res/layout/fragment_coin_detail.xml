@@ -354,7 +354,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
 
-        android:src="@drawable/ic_baseline_currency_bitcoin_24" />
+        android:src="@drawable/btc_coin" />
 
     <TextView
         android:layout_width="wrap_content"

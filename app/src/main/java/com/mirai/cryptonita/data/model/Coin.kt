@@ -19,4 +19,4 @@ data class Coin(val id: String = "",
                 val last_updated: String = ""
 )
 
-//data class CoinList(val coins:List<Coin> = listOf())
+data class CoinList(val coins:Coin)

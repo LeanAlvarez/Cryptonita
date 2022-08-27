@@ -26,3 +26,5 @@ data class Exchanges(
                     val trust_score_rank: Int = -1,
                     val trade_volume_24h_btc: Double = -1.0,
 )
+
+data class ExchangeList(val exchange:List<Exchanges> = listOf())

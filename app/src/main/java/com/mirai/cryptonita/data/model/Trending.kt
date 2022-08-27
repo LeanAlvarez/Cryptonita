@@ -30,4 +30,4 @@ data class Trending(
 )
 
 
-data class TrendingList(val coins:JsonArray)
+data class TrendingList(val trending:List<Trending> = listOf())
